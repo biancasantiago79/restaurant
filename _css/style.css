@@ -42,6 +42,10 @@ que será 16px
 
 .img-fluid {
     width: max(14vw, 100px);
+    /*permite rdimensionar uma imagem dentro do elemento onde ela foi inserida
+    tem um funcionamento bastante parecido com a popriedade background-size:, 
+    a diferença é que o background-size é utilizado quando é desejado inserir uma imagem
+    ao fundo do elemento e o obeject-fit não; */
     object-fit: cover;
 }
 
@@ -182,6 +186,7 @@ h2 {
     text-transform: uppercase;
     font-weight: 800;
 }
+
 .dishes-day .col-1 #box-dish-main .first-dish h4 {
     color: var(--yellow);
 }
@@ -192,6 +197,28 @@ h2 {
     color: var(--wine);
 }
 
+#galeria h2 {
+    color: var(--wine);
+    margin-bottom: 10px;
+}
+
+.perfil-funcionario h4 {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+#box-whats-delivery h4 {
+    font-size: 4.2rem;
+}
+
+.perfil-funcionario p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #363636;
+}
 
 /* ====================== BANNER ============================ */
 .slider {
@@ -383,9 +410,10 @@ h2 {
 .dish p {
     color: #000;
 }
+
 /*=========================SECTION GALLERY ========================*/
 
-.box-galeria {
+.box-galeria, #box-equipe {
     display: flex;
     justify-content: center;
     background: #e5e5e5 url(../_assets/img/bg_icons.svg);
@@ -393,12 +421,16 @@ h2 {
     background-attachment: fixed;
     padding-bottom: 100px;
 }
-.container-fotos {
+
+.container-foto,
+#container-equipe {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.box-fotos {
+
+.box-foto,
+#box-foto-equipe {
     display: grid;
     /*repeat() = define quantas colunas irão existir no grid e qual o tamanho que estas colunas irão ocupar*/
     grid-template-columns: repeat(4, 1fr);
@@ -406,15 +438,126 @@ h2 {
     margin-top: 20px;
 }
 
-.box-galeria img {
+.box-galeria img,
+#box-equipe img {
     height: auto;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
 
 }
-#box-galeria img:hover {
+
+#box-galeria img:hover,
+#box-equipe img:hover {
     transform: scale(1.05);
     filter: grayscale(100%);
 
+}
+
+/*==================== FOOTER =====================*/
+
+footer {
+    background: #353535 url(../_assets/img/bg_icons.svg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 4rem;
+}
+
+#contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-info-contato {
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: max(20vw, 480px);
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.box-info-contato p {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#phone.box-info-contato p {
+    font-size: 1.4rem;
+    font-weight: 500;
+
+}
+
+.box-info-contato i {
+    font-size: 2.2rem;
+    color: var(--wine);
+}
+
+#box-whats-delivery {
+    background: #fff;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-whats-delivery p {
+    color: var(--wine);
+    font-size: 1.1rem;
+}
+
+#box-whats-delivery img {
+    width: max(7vw, 110px);
+    position: absolute;
+    left: min(42vw, 550px);
+    transition: all 0.3s;
+}
+
+#box-whats-delivery img:hover {
+    /*!important= define prioridade máxima para uma propriedade,
+    quando aplicado garante que nenhuma outra regra sobreponha 
+    a regra onde foi utilizado*/
+    left: min(45vw, 600px)!important;
+
+
+}
+#whats {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+
+}
+
+#whats:hover {
+    transform: scale(1.05);
+}
+
+#whats i {
+    font-size: 3.6rem;
+    color: #34af23;
+    margin-left: 7px;
+
+}
+
+.redes-sociais {
+    text-align: right;
+    font-size: 3rem;
+    margin-top: 15px;
+}
+
+.redes-sociais i {
+    color: #fff;
+    margin-left: 15px;
+
+}
+
+.redes-sociais a:hover {
+    text-shadow: 1px 1px 8px #000;
+}
+
+#direitos {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: .9rem;
 }
